@@ -836,3 +836,9 @@ button:active {
 #departmentHeader {
     gap: 20px !important;
 }
+
+
+#allDepartmentsButton {
+    background-color: #2e7d32 !important;
+    color: #ffffff !important;
+}
