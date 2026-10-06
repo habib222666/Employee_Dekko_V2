@@ -334,7 +334,7 @@ function showDepartmentCards() {
         card.type = "button";
         card.className =
             "department-card department-color-" +
-            ((index % 20) + 1);
+            ((index % 30) + 1);
 
         card.innerHTML = `
             <span class="department-name">
