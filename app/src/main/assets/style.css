@@ -1,0 +1,838 @@
+@font-face { font-family: "Calibri"; src: url("fonts/Calibri.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Calibri"; src: url("fonts/Calibri Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Calibri"; src: url("fonts/Calibri Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Calibri"; src: url("fonts/Calibri Bold Italic.ttf") format("truetype"); font-weight: 700; font-style: italic; }
+
+* {
+    box-sizing: border-box;
+}
+
+* { font-family: "Calibri", sans-serif !important; }
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: "Calibri", sans-serif !important;
+background: #f5f7fb;
+    color: #1f2937;
+}
+
+#listPage,
+#detailsPage,
+#adminPage {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 28px;
+}
+
+
+/* Search */
+
+.searchBox {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #2563eb;
+}
+
+#clearSearch {
+    margin-top: 0;
+    background: #6b7280;
+}
+
+
+/* Result Count */
+
+#resultCount {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* Employee Card */
+
+.employee-card {
+    background: white;
+    padding: 18px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.employee-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.employee-card-info {
+    flex: 1;
+}
+
+.employee-card-info h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.employee-card-info p {
+    margin: 0 0 5px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.employee-card-info span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.employee-card-company {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+
+/* Photo */
+
+.employee-photo,
+.employee-photo-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.employee-photo {
+    object-fit: cover;
+}
+
+.employee-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 11px 16px;
+    margin-top: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.view-button {
+    width: 100%;
+}
+
+
+/* Admin Button */
+
+#adminButton {
+    width: 100%;
+    margin-top: 10px;
+    background: #374151;
+}
+
+
+/* Details Page */
+
+#detailsPage {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+#backButton,
+#adminBackButton {
+    background: #6b7280;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* Profile */
+
+.profile-card {
+    text-align: center;
+    padding: 10px 10px 24px;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.profile-photo .employee-photo,
+.profile-photo .employee-photo-placeholder {
+    width: 110px;
+    height: 110px;
+    font-size: 32px;
+}
+
+.profile-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-designation {
+    margin: 7px 0 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-company {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* Details Card */
+
+.details-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 9px 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Light colors for employee detail rows */
+.detail-row:nth-child(1) { background: #f8fbff; }
+.detail-row:nth-child(2) { background: #f8fff9; }
+.detail-row:nth-child(3) { background: #fffaf5; }
+.detail-row:nth-child(4) { background: #faf8ff; }
+.detail-row:nth-child(5) { background: #f5fcfc; }
+.detail-row:nth-child(6) { background: #fff8fb; }
+.detail-row:nth-child(7) { background: #f9fbf5; }
+.detail-row:nth-child(8) { background: #f8f8ff; }
+.detail-row:nth-child(9) { background: #fffaf8; }
+.detail-row:nth-child(10) { background: #f7fcff; }
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span {
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.detail-row strong {
+    text-align: right;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+
+/* Admin Page */
+
+#adminPage {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.admin-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.admin-card label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#employeeSelect,
+#photoInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+}
+
+#uploadPhotoButton {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#uploadStatus {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #374151;
+    text-align: center;
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+}
+#adminButton {
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+#adminButton {
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+#adminButton {
+    background: #D4A017 !important;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+#createUserButton {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    background: #2563eb !important;
+    color: #ffffff !important;
+    margin: 12px 0 !important;
+}
+
+/* =========================
+   DEPARTMENT CARDS
+========================= */
+
+#departmentSection {
+    margin-bottom: 20px;
+}
+
+#departmentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#departmentHeader h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#allEmployeesButton {
+    margin-top: 0;
+    padding: 9px 13px;
+    background: #374151;
+    font-size: 14px;
+}
+
+#departmentCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.department-card {
+    width: 100%;
+    min-height: 82px;
+    margin-top: 0;
+    padding: 14px;
+    border-radius: 14px;
+    background: white;
+    color: #1f2937;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.department-card:active {
+    transform: scale(0.98);
+}
+
+.department-name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.department-count {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+@media (max-width: 420px) {
+    #departmentCards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Department cards - 3 per row */
+
+#departmentCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.department-card {
+    width: 100%;
+    min-height: 82px;
+    margin: 0;
+    padding: 12px 10px;
+    border-radius: 14px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.department-card .department-name {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.department-card .department-count {
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.department-card:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   DEPARTMENT LIGHT COLORS
+========================= */
+
+.department-card {
+    color: #1f2937;
+}
+
+.department-card .department-name {
+    color: #1f2937;
+}
+
+.department-card .department-count {
+    color: #4b5563;
+}
+
+/* =========================
+   30 DEPARTMENT LIGHT COLORS
+========================= */
+
+.department-card .department-name {
+    color: #1f2937;
+}
+
+.department-card .department-count {
+    color: #4b5563;
+}
+
+/* =========================
+   20 DISTINCT LIGHT DEPARTMENT COLORS
+========================= */
+
+.department-card .department-name {
+    color: #1f2937;
+}
+
+.department-card .department-count {
+    color: #4b5563;
+}
+
+/* =========================
+   20 DISTINCT PASTEL COLORS
+========================= */
+
+.department-color-1 {
+    background: #B3D9FF;
+    color: #1f2937;
+}
+
+.department-color-2 {
+    background: #B8E6C1;
+    color: #1f2937;
+}
+
+.department-color-3 {
+    background: #FFE69A;
+    color: #1f2937;
+}
+
+.department-color-4 {
+    background: #FFC9A9;
+    color: #1f2937;
+}
+
+.department-color-5 {
+    background: #F5B7D2;
+    color: #1f2937;
+}
+
+.department-color-6 {
+    background: #D2B8FF;
+    color: #1f2937;
+}
+
+.department-color-7 {
+    background: #AEE8E8;
+    color: #1f2937;
+}
+
+.department-color-8 {
+    background: #FFD1A9;
+    color: #1f2937;
+}
+
+.department-color-9 {
+    background: #BFD4FF;
+    color: #1f2937;
+}
+
+.department-color-10 {
+    background: #E3B8F5;
+    color: #1f2937;
+}
+
+.department-color-11 {
+    background: #C5E6A6;
+    color: #1f2937;
+}
+
+.department-color-12 {
+    background: #FFB8B8;
+    color: #1f2937;
+}
+
+.department-color-13 {
+    background: #A9D8FF;
+    color: #1f2937;
+}
+
+.department-color-14 {
+    background: #B8E0D2;
+    color: #1f2937;
+}
+
+.department-color-15 {
+    background: #FFD0B3;
+    color: #1f2937;
+}
+
+.department-color-16 {
+    background: #D5C2FF;
+    color: #1f2937;
+}
+
+.department-color-17 {
+    background: #A8E1F0;
+    color: #1f2937;
+}
+
+.department-color-18 {
+    background: #F2C1A0;
+    color: #1f2937;
+}
+
+.department-color-19 {
+    background: #C7E8B4;
+    color: #1f2937;
+}
+
+.department-color-20 {
+    background: #F3B6D2;
+    color: #1f2937;
+}
+
+.department-card .department-name {
+    color: #1f2937;
+}
+
+.department-card .department-count {
+    color: #4b5563;
+}
+
+/* =========================
+   DEPARTMENT FOLDER PAGE
+========================= */
+
+#departmentPage {
+    padding: 10px 0 30px;
+}
+
+#departmentBackButton {
+    margin: 0 0 15px 0;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #374151;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#departmentBackButton:hover {
+    opacity: 0.9;
+}
+
+#departmentPageTitle {
+    margin: 8px 0 18px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#departmentEmployeeList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* =========================
+   FAVORITE BUTTON
+========================= */
+
+.employee-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.favorite-button {
+    width: 42px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #ef4444;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.favorite-button:hover {
+    background: #fff1f2;
+}
+
+.view-button {
+    flex: 1;
+}
+
+
+/* =========================
+   DEPARTMENT HEADER BUTTONS
+========================= */
+
+#departmentHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#departmentHeader h2 {
+    margin-right: auto;
+}
+
+#departmentHeader button {
+    border: none;
+    border-radius: 7px;
+    padding: 6px 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#allEmployeesButton {
+    background: #4F81BD;
+    color: #ffffff;
+    font-size: 17px;
+}
+
+#favoriteEmployeesButton {
+    background: #E85D75;
+    color: #ffffff;
+}
+
+#allEmployeesButton:hover,
+#favoriteEmployeesButton:hover {
+    opacity: 0.9;
+}
+
+
+/* Center all Department Header button text */
+#departmentHeader button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+}
+
+
+#departmentHeader {
+    justify-content: center !important;
+}
+
+#departmentHeader button {
+    margin: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+/* Center Department card content */
+.department-card {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.department-card .department-name,
+.department-card .department-count {
+    width: 100%;
+    text-align: center !important;
+}
+
+
+/* Keep department count at 12px */
+.department-card .department-count {
+    font-size: 12px !important;
+}
+
+
+/* Compact Department card height */
+.department-card {
+    min-height: 60px !important;
+    height: 60px;
+    padding: 8px 10px !important;
+    box-sizing: border-box;
+}
+
+
+/* Compact Department card height */
+.department-card {
+    min-height: 60px !important;
+    height: 60px;
+    padding: 8px 10px !important;
+    box-sizing: border-box;
+}
+
+
+/* Department card height */
+.department-card {
+    min-height: 65px !important;
+    height: 65px !important;
+}
+
+
+/* Gap between header buttons */
+#departmentHeader {
+    gap: 8px !important;
+}
+
+
+/* Larger button text and wider gaps */
+#departmentHeader {
+    gap: 14px !important;
+}
+
+#departmentHeader button {
+    font-size: 17px !important;
+}
+
+#allEmployeesButton {
+    font-size: 19px !important;
+}
+
+
+#departmentHeader {
+    gap: 16px !important;
+}
+
+
+#departmentHeader {
+    gap: 20px !important;
+}

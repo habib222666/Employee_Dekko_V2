@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="listPage">
+
+<button id="adminButton">Admin</button>
+
+<h1>Employee List</h1>
+
+<div class="searchBox">
+<input type="text" id="searchInput" placeholder="Search employee...">
+<button id="clearSearch">Clear</button>
+</div>
+
+<div id="resultCount">Loading...</div>
+
+<div id="departmentSection">
+    <div id="departmentHeader">
+        <button id="allDepartmentsButton">🏢 All Departments</button>
+        <button id="allEmployeesButton">👥 All Employees</button>
+        <button id="favoriteEmployeesButton">❤️ Favorite Employees</button>
+    </div>
+    <div id="departmentCards"></div>
+</div>
+
+<div id="employeeList"></div>
+
+</div>
+
+<div id="departmentPage" style="display:none;">
+    <button id="departmentBackButton">← Back to Departments</button>
+    <h1 id="departmentPageTitle"></h1>
+    <div id="departmentEmployeeList"></div>
+</div>
+
+<div id="favoritePage" style="display:none;">
+    <button id="favoriteBackButton">← Back</button>
+    <h1>❤️ Favorite Employees</h1>
+    <div id="favoriteEmployeeList"></div>
+</div>
+
+<div id="detailsPage" style="display:none;">
+<button id="backButton">← Back</button>
+<h1>Employee Details</h1>
+<div id="employeeDetails"></div>
+</div>
+
+<div id="loginPage" style="display:none;">
+<button id="loginBackButton">← Back</button>
+<h1>Admin Login</h1>
+
+<div class="admin-card">
+
+<label>Email</label>
+<input type="email" id="adminEmail" placeholder="Admin email">
+
+<label>Password</label>
+<input type="password" id="adminPassword" placeholder="Password">
+
+<button id="loginButton">Login</button>
+<button id="forgotPasswordButton" type="button">Forgot Password?</button>
+
+<div id="loginStatus"></div>
+
+</div>
+</div>
+
+<div id="resetPasswordPage" style="display:none;">
+<button id="resetBackButton">← Back</button>
+<h1>Reset Password</h1>
+
+<div class="admin-card">
+
+<label>New Password</label>
+<input type="password" id="newPassword" placeholder="New password">
+
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword" placeholder="Confirm password">
+
+<button id="updatePasswordButton">Update Password</button>
+
+<div id="resetStatus"></div>
+
+</div>
+</div>
+
+<div id="adminPage" style="display:none;">
+
+<button id="adminBackButton">← Back</button>
+
+<h1>Admin</h1>
+<button id="createUserButton" style="display:block !important;width:100%;background:#2563eb !important;color:white !important;">Create New User</button>
+
+<button id="logoutButton">Logout</button>
+
+<div class="admin-card">
+
+<h2>Employee Photo Upload</h2>
+
+<label>Select Employee</label>
+
+<select id="employeeSelect">
+<option value="">Select employee</option>
+</select>
+
+<label>Select Photo</label>
+
+<input type="file" id="photoInput" accept="image/*">
+
+<button id="uploadPhotoButton">Upload Photo</button>
+
+<div id="uploadStatus"></div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="app.js?v=20261005"></script>
+
+</body>
+</html>
