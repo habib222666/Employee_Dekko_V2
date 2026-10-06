@@ -853,3 +853,15 @@ button:active {
 .department-color-28 { background: #dcfce7; }
 .department-color-29 { background: #fef3c7; }
 .department-color-30 { background: #ede9fe; }
+
+/* FORCE DEPARTMENT COLORS 21-30 */
+button.department-card.department-color-21 { background-color: #f8d7da !important; }
+button.department-card.department-color-22 { background-color: #d1ecf1 !important; }
+button.department-card.department-color-23 { background-color: #d4edda !important; }
+button.department-card.department-color-24 { background-color: #fff3cd !important; }
+button.department-card.department-color-25 { background-color: #e2d9f3 !important; }
+button.department-card.department-color-26 { background-color: #fce1e4 !important; }
+button.department-card.department-color-27 { background-color: #dbeafe !important; }
+button.department-card.department-color-28 { background-color: #dcfce7 !important; }
+button.department-card.department-color-29 { background-color: #fef3c7 !important; }
+button.department-card.department-color-30 { background-color: #ede9fe !important; }
