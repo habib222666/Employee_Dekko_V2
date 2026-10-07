@@ -22,6 +22,11 @@ const departmentBackButton = document.getElementById("departmentBackButton");
 const favoritePage = document.getElementById("favoritePage");
 const favoriteEmployeeList = document.getElementById("favoriteEmployeeList");
 const favoriteBackButton = document.getElementById("favoriteBackButton");
+const birthdayButton = document.getElementById("birthdayButton");
+const birthdayPage = document.getElementById("birthdayPage");
+const birthdayBackButton = document.getElementById("birthdayBackButton");
+const birthdayEmployeeList = document.getElementById("birthdayEmployeeList");
+const birthdayMonths = document.getElementById("birthdayMonths");
 
 let favoriteEmployees = JSON.parse(
     localStorage.getItem("favoriteEmployees") || "[]"
@@ -1638,3 +1643,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =========================
+   BIRTHDAY FEATURE
+========================= */
+
+function showBirthdayEmployees(month) {
+    if (!birthdayEmployeeList) return;
+
+    const monthNumber = String(month).padStart(2, "0");
+
+    const birthdayEmployees = employees
+        .filter(employee => {
+            const birthday = String(employee.birthday || "").trim();
+            return /^\d{1,2}-\d{1,2}$/.test(birthday) &&
+                   birthday.split("-")[1].padStart(2, "0") === monthNumber;
+        })
+        .sort((a, b) => {
+            const dayA = parseInt(String(a.birthday).split("-")[0], 10);
+            const dayB = parseInt(String(b.birthday).split("-")[0], 10);
+            return dayA - dayB;
+        });
+
+    if (birthdayEmployees.length === 0) {
+        birthdayEmployeeList.innerHTML =
+            '<p class="no-birthday">No birthdays in this month.</p>';
+        return;
+    }
+
+    birthdayEmployeeList.innerHTML = `
+        <div class="birthday-table-wrapper">
+            <table class="birthday-table">
+                <thead>
+                    <tr>
+                        <th>Sl.</th>
+                        <th>Emp. Name</th>
+                        <th>Designation</th>
+                        <th>Birthday Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${birthdayEmployees.map((employee, index) => `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${employee.name || employee.employee_name || ""}</td>
+                            <td>${employee.designation || ""}</td>
+                            <td>${employee.birthday || ""}</td>
+                        </tr>
+                    `).join("")}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+function openBirthdayPage() {
+    departmentSection.style.display = "none";
+    employeeList.style.display = "none";
+    departmentPage.style.display = "none";
+    favoritePage.style.display = "none";
+    detailsPage.style.display = "none";
+    birthdayPage.style.display = "block";
+
+    birthdayEmployeeList.innerHTML =
+        '<p class="birthday-instruction">Select a month to view birthdays.</p>';
+}
+
+if (birthdayButton) {
+    birthdayButton.addEventListener("click", openBirthdayPage);
+}
+
+if (birthdayBackButton) {
+    birthdayBackButton.addEventListener("click", () => {
+        birthdayPage.style.display = "none";
+        departmentSection.style.display = "block";
+        employeeList.style.display = "block";
+    });
+}
+
+if (birthdayMonths) {
+    birthdayMonths.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", () => {
+            birthdayMonths.querySelectorAll("button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+            showBirthdayEmployees(button.dataset.month);
+        });
+    });
+}

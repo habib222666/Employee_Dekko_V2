@@ -865,3 +865,104 @@ button.department-card.department-color-27 { background-color: #dbeafe !importan
 button.department-card.department-color-28 { background-color: #dcfce7 !important; }
 button.department-card.department-color-29 { background-color: #fef3c7 !important; }
 button.department-card.department-color-30 { background-color: #ede9fe !important; }
+
+/* =========================
+   BIRTHDAY FEATURE
+========================= */
+
+#birthdayButton {
+    background-color: #e91e63 !important;
+    color: #ffffff !important;
+}
+
+#birthdayPage {
+    padding: 10px;
+}
+
+#birthdayPage h1 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+#birthdayMonths {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 15px 0 20px;
+}
+
+#birthdayMonths button {
+    padding: 12px 8px;
+    border: none;
+    border-radius: 8px;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#birthdayMonths button:hover,
+#birthdayMonths button.active {
+    background: #e91e63;
+    color: #ffffff;
+}
+
+.birthday-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.birthday-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.birthday-table th,
+.birthday-table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.birthday-table th {
+    background: #f3f4f6;
+    font-weight: 700;
+}
+
+.birthday-table td:first-child,
+.birthday-table th:first-child {
+    text-align: center;
+    width: 55px;
+}
+
+.birthday-table td:last-child,
+.birthday-table th:last-child {
+    white-space: nowrap;
+}
+
+.no-birthday,
+.birthday-instruction {
+    text-align: center;
+    padding: 25px 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    #birthdayMonths {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    #birthdayMonths button {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    .birthday-table th,
+    .birthday-table td {
+        padding: 8px 6px;
+        font-size: 14px;
+    }
+}
