@@ -11,17 +11,6 @@
 
 <div id="listPage">
 
-<button id="adminButton">Admin</button>
-
-<h1>Employee List</h1>
-
-<div class="searchBox">
-<input type="text" id="searchInput" placeholder="Search employee...">
-<button id="clearSearch">Clear</button>
-</div>
-
-<div id="resultCount">Loading...</div>
-
 <div id="departmentSection">
     <div id="departmentHeader">
         <button id="allDepartmentsButton">🏢 All Departments</button>
@@ -29,16 +18,28 @@
         <button id="favoriteEmployeesButton">❤️ Favorite Employees</button>
         <button id="birthdayButton">🎂 Birthday</button>
     </div>
-    <div id="departmentCards"></div>
 </div>
 
-<div id="employeeList"></div>
+</div>
 
+<div id="allEmployeesPage" style="display:none;">
+    <button id="allEmployeesBackButton">← Back</button>
+    <h1>👥 All Employees</h1>
+
+    <div class="searchBox">
+        <input type="text" id="searchInput" placeholder="Search employee...">
+        <button id="clearSearch">Clear</button>
+    </div>
+
+    <div id="resultCount">Loading...</div>
+
+    <div id="employeeList"></div>
 </div>
 
 <div id="departmentPage" style="display:none;">
     <button id="departmentBackButton">← Back to Departments</button>
-    <h1 id="departmentPageTitle"></h1>
+    <h1 id="departmentPageTitle">🏢 All Departments</h1>
+    <div id="departmentCards"></div>
     <div id="departmentEmployeeList"></div>
 </div>
 

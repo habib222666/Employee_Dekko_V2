@@ -27,6 +27,8 @@ const birthdayPage = document.getElementById("birthdayPage");
 const birthdayBackButton = document.getElementById("birthdayBackButton");
 const birthdayEmployeeList = document.getElementById("birthdayEmployeeList");
 const birthdayMonths = document.getElementById("birthdayMonths");
+const allEmployeesPage = document.getElementById("allEmployeesPage");
+const allEmployeesBackButton = document.getElementById("allEmployeesBackButton");
 
 let favoriteEmployees = JSON.parse(
     localStorage.getItem("favoriteEmployees") || "[]"
@@ -521,18 +523,20 @@ function showFavoriteEmployees() {
 }
 
 
-function showEmployees(list) {
+function showEmployees(list, targetList = employeeList) {
 
-    employeeList.innerHTML = "";
+    targetList.innerHTML = "";
 
 
-    resultCount.textContent =
-        `${list.length} employee${list.length === 1 ? "" : "s"} found`;
+    if (targetList === employeeList) {
+        resultCount.textContent =
+            `${list.length} employee${list.length === 1 ? "" : "s"} found`;
+    }
 
 
     if (list.length === 0) {
 
-        employeeList.innerHTML =
+        targetList.innerHTML =
             "<p>No employees found.</p>";
 
         return;
@@ -615,7 +619,7 @@ function showEmployees(list) {
                 }
             );
 
-        employeeList.appendChild(div);
+        targetList.appendChild(div);
 
     });
 
@@ -854,26 +858,19 @@ function loadEmployeeSelect() {
    ADMIN BUTTON
 ========================= */
 
-adminButton.addEventListener(
-    "click",
-    function() {
+if (adminButton) {
+    adminButton.addEventListener(
+        "click",
+        function() {
 
-        listPage.style.display =
-            "none";
+            listPage.style.display = "none";
+            detailsPage.style.display = "none";
+            loginPage.style.display = "block";
+            loginStatus.textContent = "";
 
-
-        detailsPage.style.display =
-            "none";
-
-
-        loginPage.style.display =
-            "block";
-
-
-        loginStatus.textContent = "";
-
-    }
-);
+        }
+    );
+}
 
 
 /* =========================
@@ -1432,12 +1429,15 @@ allDepartmentsButton.addEventListener(
     "click",
     function() {
 
+        listPage.style.display = "none";
         favoritePage.style.display = "none";
-        departmentPage.style.display = "none";
-        listPage.style.display = "block";
 
-        departmentSection.style.display = "block";
-        employeeList.style.display = "none";
+        departmentPage.style.display = "block";
+
+        departmentPageTitle.textContent = "🏢 All Departments";
+        departmentEmployeeList.innerHTML = "";
+
+        showDepartmentCards();
 
         window.scrollTo({
             top: 0,
@@ -1494,11 +1494,12 @@ allEmployeesButton.addEventListener(
 
         searchInput.value = "";
 
+        listPage.style.display = "none";
         departmentPage.style.display = "none";
         favoritePage.style.display = "none";
-        listPage.style.display = "block";
-        departmentSection.style.display = "block";
-        employeeList.style.display = "block";
+        birthdayPage.style.display = "none";
+
+        allEmployeesPage.style.display = "block";
 
         showEmployees(employees);
 
@@ -1508,6 +1509,22 @@ allEmployeesButton.addEventListener(
         });
     }
 );
+
+if (allEmployeesBackButton) {
+    allEmployeesBackButton.addEventListener(
+        "click",
+        function() {
+
+            allEmployeesPage.style.display = "none";
+            listPage.style.display = "block";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    );
+}
 
 
 /* =========================
