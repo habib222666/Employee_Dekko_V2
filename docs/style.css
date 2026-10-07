@@ -1090,3 +1090,62 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         font-size: 13px !important;
     }
 }
+
+/* =========================
+   BIRTHDAY MONTHS
+   4 MONTHS PER ROW
+========================= */
+
+#birthdayMonths {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5px !important;
+    margin: 10px 0 15px !important;
+}
+
+#birthdayMonths button {
+    padding: 9px 4px !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+}
+
+/* 12 different month colors */
+#birthdayMonths button[data-month="1"]  { background: #ffcdd2 !important; }
+#birthdayMonths button[data-month="2"]  { background: #f8bbd0 !important; }
+#birthdayMonths button[data-month="3"]  { background: #e1bee7 !important; }
+#birthdayMonths button[data-month="4"]  { background: #d1c4e9 !important; }
+#birthdayMonths button[data-month="5"]  { background: #c5cae9 !important; }
+#birthdayMonths button[data-month="6"]  { background: #bbdefb !important; }
+#birthdayMonths button[data-month="7"]  { background: #b2ebf2 !important; }
+#birthdayMonths button[data-month="8"]  { background: #b2dfdb !important; }
+#birthdayMonths button[data-month="9"]  { background: #c8e6c9 !important; }
+#birthdayMonths button[data-month="10"] { background: #dcedc8 !important; }
+#birthdayMonths button[data-month="11"] { background: #fff9c4 !important; }
+#birthdayMonths button[data-month="12"] { background: #ffe0b2 !important; }
+
+/* Selected month */
+#birthdayMonths button.active {
+    color: #ffffff !important;
+    background: #c2185b !important;
+    border-color: #880e4f !important;
+}
+
+/* Keep selected colors consistent on hover */
+#birthdayMonths button.active:hover {
+    background: #ad1457 !important;
+}
+
+@media (max-width: 600px) {
+    #birthdayMonths {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 4px !important;
+    }
+
+    #birthdayMonths button {
+        padding: 8px 2px !important;
+        font-size: 13px !important;
+    }
+}
