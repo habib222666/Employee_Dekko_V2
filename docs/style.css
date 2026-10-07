@@ -1311,3 +1311,82 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         border-radius: 13px !important;
     }
 }
+
+/* =========================
+   STANDARD DASHBOARD BUTTONS
+========================= */
+
+#departmentHeader {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+}
+
+#departmentHeader button {
+    min-height: 82px !important;
+    height: 82px !important;
+    padding: 10px 6px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0,0,0,0.10) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+/* Icon */
+#departmentHeader button::first-letter {
+    font-size: 24px !important;
+}
+
+/* Different colors */
+
+#allDepartmentsButton {
+    background: #43a047 !important;
+    color: #ffffff !important;
+}
+
+#allEmployeesButton {
+    background: #1976d2 !important;
+    color: #ffffff !important;
+}
+
+#favoriteEmployeesButton {
+    background: #8e44ad !important;
+    color: #ffffff !important;
+}
+
+#birthdayButton {
+    background: #f39c12 !important;
+    color: #ffffff !important;
+}
+
+#departmentHeader button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 9px rgba(0,0,0,0.16) !important;
+}
+
+#departmentHeader button:active {
+    transform: scale(0.98) !important;
+}
+
+@media (max-width: 600px) {
+    #departmentHeader {
+        gap: 8px !important;
+    }
+
+    #departmentHeader button {
+        height: 76px !important;
+        min-height: 76px !important;
+        font-size: 13px !important;
+        border-radius: 10px !important;
+    }
+}
