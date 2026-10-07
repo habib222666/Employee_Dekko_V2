@@ -1052,3 +1052,41 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
     color: #ffffff !important;
     border-color: #c2185b !important;
 }
+
+/* Birthday month buttons - compact and improved */
+#birthdayMonths {
+    gap: 5px !important;
+    margin: 12px 0 18px !important;
+}
+
+#birthdayMonths button {
+    padding: 9px 5px !important;
+    border-radius: 6px !important;
+    background-color: #f8bbd0 !important;
+    color: #5a1533 !important;
+    border: 1px solid #ec7aa5 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+#birthdayMonths button:hover {
+    background-color: #f06292 !important;
+    color: #ffffff !important;
+}
+
+#birthdayMonths button.active {
+    background-color: #c2185b !important;
+    color: #ffffff !important;
+    border-color: #880e4f !important;
+}
+
+@media (max-width: 600px) {
+    #birthdayMonths {
+        gap: 4px !important;
+    }
+
+    #birthdayMonths button {
+        padding: 8px 4px !important;
+        font-size: 13px !important;
+    }
+}
