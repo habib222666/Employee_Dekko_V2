@@ -1243,3 +1243,71 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
     margin: 0 auto 12px auto !important;
     box-sizing: border-box !important;
 }
+
+/* =========================
+   HOME - STYLISH MAIN BUTTONS
+========================= */
+
+#departmentHeader {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 4px !important;
+}
+
+#departmentHeader button {
+    width: 100% !important;
+    min-height: 64px !important;
+    padding: 12px 8px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+#departmentHeader button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 7px 15px rgba(0,0,0,0.20) !important;
+}
+
+#departmentHeader button:active {
+    transform: scale(0.97) !important;
+}
+
+/* Individual button colors */
+
+#allDepartmentsButton {
+    background: linear-gradient(135deg, #2e7d32, #43a047) !important;
+}
+
+#allEmployeesButton {
+    background: linear-gradient(135deg, #1565c0, #42a5f5) !important;
+}
+
+#favoriteEmployeesButton {
+    background: linear-gradient(135deg, #c2185b, #ec407a) !important;
+}
+
+#birthdayButton {
+    background: linear-gradient(135deg, #e91e63, #ff6090) !important;
+}
+
+@media (max-width: 600px) {
+    #departmentHeader {
+        gap: 10px !important;
+    }
+
+    #departmentHeader button {
+        min-height: 62px !important;
+        font-size: 14px !important;
+        border-radius: 13px !important;
+    }
+}
