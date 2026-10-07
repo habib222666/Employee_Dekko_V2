@@ -966,3 +966,56 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         font-size: 14px;
     }
 }
+
+/* =========================
+   FIX DEPARTMENT HEADER BUTTONS
+========================= */
+
+#departmentHeader {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#departmentHeader button {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 8px 5px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box;
+}
+
+#allDepartmentsButton {
+    background-color: #2e7d32 !important;
+    color: #ffffff !important;
+}
+
+#allEmployeesButton {
+    background-color: #4F81BD !important;
+    color: #ffffff !important;
+}
+
+#favoriteEmployeesButton {
+    background-color: #E85D75 !important;
+    color: #ffffff !important;
+}
+
+#birthdayButton {
+    background-color: #e91e63 !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+    #departmentHeader {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #departmentHeader button {
+        font-size: 14px !important;
+    }
+}
