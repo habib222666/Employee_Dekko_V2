@@ -1149,3 +1149,38 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         font-size: 13px !important;
     }
 }
+
+/* =========================
+   BIRTHDAY PORTRAIT LAYOUT
+========================= */
+
+#birthdayPage {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+}
+
+#birthdayPage .birthday-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+
+#birthdayPage .birthday-table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: auto !important;
+}
+
+#birthdayPage h1 {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (min-width: 601px) {
+    #birthdayPage {
+        max-width: 600px !important;
+    }
+}
