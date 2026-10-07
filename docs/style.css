@@ -1210,3 +1210,27 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         max-width: 600px !important;
     }
 }
+
+/* =========================
+   DEPARTMENT PAGE PORTRAIT
+========================= */
+
+#departmentPage {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#departmentEmployeeList {
+    width: 100% !important;
+    max-width: 600px !important;
+    box-sizing: border-box !important;
+}
+
+@media (min-width: 601px) {
+    #departmentPage {
+        max-width: 600px !important;
+    }
+}
