@@ -1497,3 +1497,8 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         font-size: 15px !important;
     }
 }
+
+#departmentSection::before {
+    margin-bottom: 36px !important;
+}
+
