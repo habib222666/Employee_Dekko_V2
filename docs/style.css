@@ -1234,3 +1234,12 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         max-width: 600px !important;
     }
 }
+
+/* Admin button - top of Home Screen */
+#listPage > #adminButton {
+    display: block !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto 12px auto !important;
+    box-sizing: border-box !important;
+}
