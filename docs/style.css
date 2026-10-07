@@ -1037,3 +1037,18 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
     font-size: 15px !important;
     white-space: nowrap !important;
 }
+
+/* Birthday month buttons - clearer default color */
+#birthdayMonths button {
+    background-color: #f48fb1 !important;
+    color: #4a1025 !important;
+    border: 1px solid #ec407a !important;
+    font-weight: 600 !important;
+}
+
+#birthdayMonths button:hover,
+#birthdayMonths button.active {
+    background-color: #e91e63 !important;
+    color: #ffffff !important;
+    border-color: #c2185b !important;
+}
