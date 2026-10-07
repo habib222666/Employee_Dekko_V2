@@ -38,21 +38,18 @@ function isFavorite(employee) {
     );
 }
 
-function toggleFavorite(employee) {
+async function toggleFavorite(employee) {
 
     const employeeNo = String(employee.employee_no);
+    const newFavorite = !isFavorite(employee);
 
-    if (favoriteEmployees.includes(employeeNo)) {
-
+    if (newFavorite) {
+        favoriteEmployees.push(employeeNo);
+    } else {
         favoriteEmployees =
             favoriteEmployees.filter(
                 id => id !== employeeNo
             );
-
-    } else {
-
-        favoriteEmployees.push(employeeNo);
-
     }
 
     localStorage.setItem(
@@ -60,6 +57,32 @@ function toggleFavorite(employee) {
         JSON.stringify(favoriteEmployees)
     );
 
+    try {
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/employee_dekko_v2?employee_no=eq.${encodeURIComponent(employeeNo)}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "apikey": SUPABASE_KEY,
+                    "Authorization": `Bearer ${SUPABASE_KEY}`,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=minimal"
+                },
+                body: JSON.stringify({
+                    favorite: newFavorite
+                })
+            }
+        );
+
+        if (!response.ok) {
+            console.error(
+                "Failed to sync favorite:",
+                await response.text()
+            );
+        }
+    } catch (error) {
+        console.error("Favorite sync error:", error);
+    }
 }
 
 
@@ -166,6 +189,16 @@ async function loadEmployees() {
 
 
         employees = await response.json();
+
+        // Load favorite status from Supabase
+        favoriteEmployees = employees
+            .filter(employee => employee.favorite === true)
+            .map(employee => String(employee.employee_no));
+
+        localStorage.setItem(
+            "favoriteEmployees",
+            JSON.stringify(favoriteEmployees)
+        );
 
 
         showDepartmentCards();
