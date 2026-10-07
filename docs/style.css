@@ -1390,3 +1390,110 @@ button.department-card.department-color-30 { background-color: #ede9fe !importan
         border-radius: 10px !important;
     }
 }
+
+/* Dashboard icon + label */
+#departmentHeader button {
+    font-size: 0 !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+#departmentHeader .dashboard-icon {
+    display: block !important;
+    font-size: 30px !important;
+    line-height: 1 !important;
+}
+
+#departmentHeader .dashboard-label {
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+}
+
+@media (max-width: 600px) {
+    #departmentHeader .dashboard-icon {
+        font-size: 27px !important;
+    }
+
+    #departmentHeader .dashboard-label {
+        font-size: 14px !important;
+    }
+}
+
+/* Admin and Birthday must be clearly different */
+#listPage > #adminButton {
+    background: #455a64 !important;
+    color: #ffffff !important;
+}
+
+#birthdayButton {
+    background: #00897b !important;
+    color: #ffffff !important;
+}
+
+/* FINAL OVERRIDE - DASHBOARD BUTTONS */
+
+#departmentHeader button {
+    font-size: 16px !important;
+    font-family: Arial, sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    height: 86px !important;
+    min-height: 86px !important;
+    padding: 7px 4px !important;
+    line-height: normal !important;
+}
+
+#departmentHeader button::first-letter {
+    font-size: inherit !important;
+}
+
+#departmentHeader .dashboard-icon {
+    display: block !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+}
+
+#departmentHeader .dashboard-label {
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+}
+
+#allDepartmentsButton {
+    background: #2e7d32 !important;
+}
+
+#allEmployeesButton {
+    background: #1976d2 !important;
+}
+
+#favoriteEmployeesButton {
+    background: #8e44ad !important;
+}
+
+#birthdayButton {
+    background: #00897b !important;
+}
+
+@media (max-width: 600px) {
+    #departmentHeader button {
+        height: 82px !important;
+        min-height: 82px !important;
+    }
+
+    #departmentHeader .dashboard-icon {
+        font-size: 30px !important;
+    }
+
+    #departmentHeader .dashboard-label {
+        font-size: 15px !important;
+    }
+}
